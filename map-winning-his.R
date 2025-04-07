@@ -76,5 +76,3 @@ ggplot(data = choropleth_data) +
 
 # Save the plot
 ggsave("lottery_wins_map.svg", width = 10, height = 6, dpi = 30)
-# Also save as PNG for quick reference
-ggsave("lottery_wins_map.png", width = 8, height = 5, dpi = 300)

@@ -1,112 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 720 504">
-  <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
-  <defs>
-    <style>
-      .st0, .st1 {
-        fill: none;
-      }
-
-      .st2 {
-        font-size: 11.38px;
-      }
-
-      .st2, .st3 {
-        font-family: ArialMT, Arial;
-      }
-
-      .st2, .st3, .st4, .st5, .st6 {
-        isolation: isolate;
-      }
-
-      .st7 {
-        fill: #e51f1c;
-      }
-
-      .st3, .st4 {
-        font-size: 10px;
-      }
-
-      .st3, .st6 {
-        fill: #4d4d4d;
-      }
-
-      .st4, .st5 {
-        font-family: Times-Roman, Times;
-      }
-
-      .st8 {
-        letter-spacing: .36em;
-      }
-
-      .st9 {
-        fill: #770001;
-      }
-
-      .st10 {
-        clip-path: url(#clippath-1);
-      }
-
-      .st11 {
-        fill: #ff504d;
-      }
-
-      .st12 {
-        fill: #600;
-      }
-
-      .st13 {
-        fill: #f66;
-      }
-
-      .st1 {
-        stroke: #ebebeb;
-        stroke-linejoin: round;
-        stroke-width: 1.07px;
-      }
-
-      .st5 {
-        font-size: 11px;
-      }
-
-      .st6 {
-        font-family: TimesNewRomanPSMT, 'Times New Roman';
-        font-size: 12px;
-      }
-    </style>
-    <clipPath id="clippath-1">
-      <rect class="st0" width="720" height="504"/>
-    </clipPath>
-  </defs>
-  <rect class="st0" width="720" height="504"/>
-  <rect class="st0" x="76.47" y="24.13" width="638.05" height="433.26"/>
-  <line class="st1" x1="105.47" y1="457.39" x2="105.47" y2="24.13"/>
-  <line class="st1" x1="254.2" y1="457.39" x2="254.2" y2="24.13"/>
-  <line class="st1" x1="402.93" y1="457.39" x2="402.93" y2="24.13"/>
-  <line class="st1" x1="551.66" y1="457.39" x2="551.66" y2="24.13"/>
-  <line class="st1" x1="700.39" y1="457.39" x2="700.39" y2="24.13"/>
-  <rect class="st12" x="105.47" y="44.96" width="580.05" height="58.32"/>
-  <rect class="st9" x="105.47" y="128.28" width="550.3" height="58.32"/>
-  <rect class="st7" x="105.47" y="211.6" width="356.95" height="58.32"/>
-  <rect class="st11" x="105.47" y="294.92" width="267.71" height="58.32"/>
-  <rect class="st13" x="105.47" y="378.24" width="223.09" height="58.32"/>
-  <text class="st2" transform="translate(688.05 78.2)"><tspan x="0" y="0">39</tspan></text>
-  <text/>
-  <text/>
-  <text class="st2" transform="translate(331.1 411.48)"><tspan x="0" y="0">15</tspan></text>
-  <g class="st10">
-    <text class="st6" transform="translate(25.56 411.4)"><tspan x="0" y="0">Michigan</tspan></text>
-    <text class="st6" transform="translate(47.54 328.08)"><tspan x="0" y="0">Ohio</tspan></text>
-    <text class="st6" transform="translate(15.91 244.76)"><tspan x="0" y="0">New Jersey</tspan></text>
-    <text class="st6" transform="translate(22.9 161.44)"><tspan x="0" y="0">California</tspan></text>
-    <text class="st6" transform="translate(22.34 78.12)"><tspan x="0" y="0">New York</tspan></text>
-    <text class="st3" transform="translate(102.69 469.5)"><tspan x="0" y="0">0</tspan></text>
-    <text class="st3" transform="translate(248.64 469.5)"><tspan x="0" y="0">10</tspan></text>
-    <text class="st3" transform="translate(397.37 469.5)"><tspan x="0" y="0">20</tspan></text>
-    <text class="st3" transform="translate(546.1 469.5)"><tspan x="0" y="0">30</tspan></text>
-    <text class="st3" transform="translate(694.83 469.5)"><tspan x="0" y="0">40</tspan></text>
-    <text class="st5" transform="translate(356.07 482.35)"><tspan x="0" y="0">Number of Wins</tspan></text>
-    <text class="st4" transform="translate(476.98 495.94)"><tspan x="0" y="0">By:</tspan><tspan class="st8" x="14.45" y="0"> </tspan><tspan x="20.58" y="0">Xinlin</tspan><tspan class="st8" x="46.14" y="0"> </tspan><tspan x="52.27" y="0">Jiang</tspan><tspan class="st8" x="73.37" y="0"> </tspan><tspan x="79.5" y="0">|</tspan><tspan class="st8" x="81.51" y="0"> </tspan><tspan x="87.64" y="0">Data</tspan><tspan class="st8" x="106.51" y="0"> </tspan><tspan x="112.64" y="0">source:</tspan><tspan class="st8" x="141.52" y="0"> </tspan><tspan x="147.65" y="0">https://www.megamil</tspan><tspan x="234.59" y="0">-</tspan></text>
-  </g>
-  <text/>
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='576.00pt' height='360.00pt' viewBox='0 0 576.00 360.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: none;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1NzYuMDB8MC4wMHwzNjAuMDA='>
+    <rect x='0.00' y='0.00' width='576.00' height='360.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzNjAuMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpNzYuNDd8NTcwLjUyfDI0LjEzfDMxMy4zOQ=='>
+    <rect x='76.47' y='24.13' width='494.05' height='289.26' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNzYuNDd8NTcwLjUyfDI0LjEzfDMxMy4zOQ==)'>
+<polyline points='98.93,313.39 98.93,24.13 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='214.09,313.39 214.09,24.13 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='329.25,313.39 329.25,24.13 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='444.42,313.39 444.42,24.13 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='559.58,313.39 559.58,24.13 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<rect x='98.93' y='38.03' width='449.14' height='38.94' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #660000;' />
+<rect x='98.93' y='93.66' width='426.10' height='38.94' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #770001;' />
+<rect x='98.93' y='149.29' width='276.39' height='38.94' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #E51F1C;' />
+<rect x='98.93' y='204.92' width='207.29' height='38.94' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF504D;' />
+<rect x='98.93' y='260.54' width='172.74' height='38.94' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF6666;' />
+<text x='550.60' y='61.59' style='font-size: 11.38px; font-family: "Arial";' textLength='12.66px' lengthAdjust='spacingAndGlyphs'>39</text>
+<text x='527.56' y='117.21' style='font-size: 11.38px; font-family: "Arial";' textLength='12.66px' lengthAdjust='spacingAndGlyphs'>37</text>
+<text x='377.85' y='172.84' style='font-size: 11.38px; font-family: "Arial";' textLength='12.66px' lengthAdjust='spacingAndGlyphs'>24</text>
+<text x='308.75' y='228.47' style='font-size: 11.38px; font-family: "Arial";' textLength='12.66px' lengthAdjust='spacingAndGlyphs'>18</text>
+<text x='274.20' y='284.10' style='font-size: 11.38px; font-family: "Arial";' textLength='12.66px' lengthAdjust='spacingAndGlyphs'>15</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHwzNjAuMDA=)'>
+<text x='71.54' y='284.33' text-anchor='end' style='font-size: 12.00px; font-weight: bold;fill: #4D4D4D; font-family: "Arial";' textLength='52.01px' lengthAdjust='spacingAndGlyphs'>Michigan</text>
+<text x='71.54' y='228.71' text-anchor='end' style='font-size: 12.00px; font-weight: bold;fill: #4D4D4D; font-family: "Arial";' textLength='27.33px' lengthAdjust='spacingAndGlyphs'>Ohio</text>
+<text x='71.54' y='173.08' text-anchor='end' style='font-size: 12.00px; font-weight: bold;fill: #4D4D4D; font-family: "Arial";' textLength='66.06px' lengthAdjust='spacingAndGlyphs'>New Jersey</text>
+<text x='71.54' y='117.45' text-anchor='end' style='font-size: 12.00px; font-weight: bold;fill: #4D4D4D; font-family: "Arial";' textLength='55.35px' lengthAdjust='spacingAndGlyphs'>California</text>
+<text x='71.54' y='61.82' text-anchor='end' style='font-size: 12.00px; font-weight: bold;fill: #4D4D4D; font-family: "Arial";' textLength='54.70px' lengthAdjust='spacingAndGlyphs'>New York</text>
+<text x='98.93' y='325.50' text-anchor='middle' style='font-size: 10.00px;fill: #4D4D4D; font-family: "Arial";' textLength='5.56px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='214.09' y='325.50' text-anchor='middle' style='font-size: 10.00px;fill: #4D4D4D; font-family: "Arial";' textLength='11.12px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='329.25' y='325.50' text-anchor='middle' style='font-size: 10.00px;fill: #4D4D4D; font-family: "Arial";' textLength='11.12px' lengthAdjust='spacingAndGlyphs'>20</text>
+<text x='444.42' y='325.50' text-anchor='middle' style='font-size: 10.00px;fill: #4D4D4D; font-family: "Arial";' textLength='11.12px' lengthAdjust='spacingAndGlyphs'>30</text>
+<text x='559.58' y='325.50' text-anchor='middle' style='font-size: 10.00px;fill: #4D4D4D; font-family: "Arial";' textLength='11.12px' lengthAdjust='spacingAndGlyphs'>40</text>
+<text x='323.50' y='338.35' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='78.85px' lengthAdjust='spacingAndGlyphs'>Number of Wins</text>
+<text x='323.50' y='15.55' text-anchor='middle' style='font-size: 14.00px; font-weight: bold; font-family: "Arial";' textLength='297.01px' lengthAdjust='spacingAndGlyphs'>Top 5 States with Most Lottery Jackpot Wins</text>
+<text x='570.52' y='352.57' text-anchor='end' style='font-size: 8.80px; font-family: "Arial";' textLength='237.92px' lengthAdjust='spacingAndGlyphs'>By: Xinlin Jiang | Data source: https://www.megamillions.com</text>
+</g>
 </svg>
