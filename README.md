@@ -1,5 +1,6 @@
 # No One Wins the Jackpot
 
+##Main page https://gracejiang0612.github.io/No-One-Wins-the-Jackpots/
 ## Project Aim
 This data story investigates the reality behind Mega Millions jackpots through data scraping, analysis, and visualization. The project reveals the significant discrepancy between advertised jackpot amounts and what winners actually receive, exposing a concerning pattern in lottery marketing.
 
