@@ -3,7 +3,7 @@
 ## Main page https://gracejiang0612.github.io/No-One-Wins-the-Jackpots/
 
 ## Project Aim
-This data story investigates the reality behind Mega Millions jackpots through data scraping, analysis, and visualization. The project reveals the significant discrepancy between advertised jackpot amounts and what winners actually receive, exposing a concerning pattern in lottery marketing.
+This data story shows the reality behind Mega Millions jackpots. The project reveals the discrepancy between advertised jackpot amounts and what winners actually receive, exposing a concerning pattern in lottery marketing.
 
 ## Key Findings
 Analysis of the past five years' data reveals that lottery winners who opt for immediate cash payout typically receive only 50-60% of the advertised jackpot amount. This creates a substantial gap between headline-grabbing jackpot figures and the actual sums awarded to winners, raising questions about lottery advertising practices.
