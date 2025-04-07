@@ -1,274 +1,1112 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>No One Wins the Jackpot</title>
-
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <style>
         body {
             margin: 0;
             font-size: 20px;
             font-family: Georgia, 'Times New Roman', Times, serif;
-            text-rendering: optimizeLegibility;
+            line-height: 1.6;
         }
-
-        .content {
-            max-width: 640px;
-            margin: auto;
+        
+        .header-container {
+            position: relative;
+            width: 100%;
+            min-height: 70vh;
+            background-image: url('pic1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2em;
         }
-
-        .header {
-            padding: 3em 0;
-        }
-
-        a {
-            color: #f05349;
-        }
-
-        .footer {
-            background: #f4f4f4;
+        
+        .title-box {
+            background-color: rgba(10,52,99,0.9);
+            color: white;
+            padding: 30px 90px;
+            border-radius: 5px;
             text-align: center;
-            font-size: 0.8em;
-            margin-top: 4em;
-            padding: 4em 0;
         }
-
-        figure {
-            margin: 0;
-            padding-bottom: 1.2em;
-        }
-
-        figcaption {
-            font-size: 0.8em;
-            text-align: center;
-            margin-top: 0.5em;
-            color: #666;
-        }
-
+        
         h1 {
             font-family: 'Lora', Georgia, serif;
             font-weight: bold;
             font-size: 3em;
             line-height: 1.1;
+            margin: 0;
         }
-
-        .full-width figure {
-            text-align: center;
+        
+        h2 {
+            font-family: 'Lora', Georgia, serif;
+            font-weight: bold;
+            margin: 1.5em 0 0.5em 0;
         }
-
-        iframe,
-        img,
-        video {
-            max-width: 100%;
+        
+        .chart-title {
+            color: #0a3463;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-top: 1.5em;
+            margin-bottom: 0.2em;
         }
-
+        
+        .chart-subtitle {
+            font-style: italic;
+            color: #555;
+            margin-top: 0;
+            margin-bottom: 1.5em;
+            font-size: 0.8em;
+        }
+        
+        .credit-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px 12px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+        
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
         p {
-            line-height: 1.6;
-            margin: 0;
-            padding-bottom: 1.2em;
+            margin: 0 0 1.2em 0;
         }
-
-        ul {
-            margin: 0;
-            padding-bottom: 1em;
-            line-height: 1.6;
-        }
-
-        iframe {
-            padding-bottom: 1.2em;
-        }
-
-        code {
-            font-family: 'Courier New', monospace;
-            background: #fff880;
-        }
-
-        /* margin on mobile */
-        @media (max-width: 640px) {
-            body {
-                font-size: 18px;
-            }
-
-            .content {
-                padding-left: 0.5em;
-                padding-right: 0.5em;
-            }
-        }
-    </style>
-    <style>
-        .with-image-bg {
-            position: relative;
-            background-size: cover;
-            background-position: center center;
-            margin-bottom: 2em;
-
-            /* Center everything inside */
-            min-height: 70svh;
+        
+        .chart-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #f5f5f5;
             display: flex;
             justify-content: center;
             align-items: center;
-
-            /* White text with a shadow */
-            color: white;
-            text-shadow: 0px 0px 30px black,
-                0px 0px 10px rgba(0, 0, 0, 0.5);
+            border: 1px solid #ddd;
+            margin: 2em 0;
         }
-
-        .with-image-bg {
-            background-image: url('pic1.jpg');
+        
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid #0a3463;
+            padding-left: 1em;
+            margin-left: 0;
+            color: #555;
         }
-
-        .video-background {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .video-background video {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
+        
+        .footer {
+            background-color: #f5f5f5;
+            padding: 2em 0;
+            text-align: center;
+            margin-top: 3em;
+            font-size: 0.8em;
+            color: #666;
         }
     </style>
 </head>
 
 <body>
-    <div class="header with-image-bg">
-        <div class="content">
+    <div class="header-container">
+        <div class="title-box">
             <h1>No One Wins the Jackpot</h1>
         </div>
-        
+        <div class="credit-badge">Background image credit: Sam Saunders | Flickr</div>
     </div>
-    <div class="image-caption">Credit: Sam Saunders | Flickr</div>
-    <div class="content">
-
-        <div class="byline">
-            <p>By <a href="https://www.google.com">Xinlin Jiang</a></p>
-        </div>
+    
+    
+    <div class="main-content">
         <p>Last year, a lucky Californian became the state’s newest billionaire after winning the $1.22 billion Mega Millions jackpot drawn on Friday night, December 27, 2024.</p>
+        
+        <p>Under news reports on YouTube, people complained of “fraud.” The highest-liked comment came from @shawnwillia: <blockquote>"Really!!! Again.... Bull crap all/most winners from there!! It's got to be rigged!!! Such a scam."</blockquote></p>
+        
+        <p>Does California really the luckiest place for Mega Millions jackpot wins?</p>
+
+        <h3 class="chart-title">America’s Lottery Hotspots: Where Lightning Strikes Most Often</h3>
+        <p class="chart-subtitle">From 2002, Mega Millions jackpots show up most often in these top five states, with New York claiming 39 wins.</p>
+        
+
+
+
+
+
+
+
+
+
+
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-06 21:09 -->
+<!-- ai file: lottery-location.ai -->
+<style media="screen,print">
+	#g-lottery-location-box ,
+	#g-lottery-location-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-lottery-location-box p {
+		margin:0;
+	}
+	#g-lottery-location-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-lottery-location-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-lottery-location-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-lottery-location-box .g-aiPointText p { white-space: nowrap; }
+	#g-lottery-location-full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-lottery-location-full p {
+		font-weight:regular;
+		line-height:14px;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:12px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+		position:static;
+	}
+	#g-lottery-location-full .g-pstyle0 {
+		font-weight:500;
+		height:14px;
+	}
+	#g-lottery-location-full .g-pstyle1 {
+		font-weight:500;
+		height:14px;
+		text-align:center;
+	}
+	#g-lottery-location-full .g-pstyle2 {
+		font-weight:500;
+	}
+	#g-lottery-location-full .g-pstyle3 {
+		font-family:arial,helvetica,sans-serif;
+		line-height:10px;
+		height:10px;
+		font-size:8px;
+		color:rgb(77,77,77);
+	}
+	#g-lottery-location-medium {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-lottery-location-medium p {
+		font-weight:regular;
+		line-height:12px;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:10px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+		position:static;
+	}
+	#g-lottery-location-medium .g-pstyle0 {
+		font-family:arial,helvetica,sans-serif;
+		height:12px;
+	}
+	#g-lottery-location-medium .g-pstyle1 {
+		font-weight:500;
+		height:12px;
+		color:rgb(77,77,77);
+	}
+	#g-lottery-location-medium .g-pstyle2 {
+		font-weight:500;
+	}
+	#g-lottery-location-medium .g-pstyle3 {
+		font-weight:500;
+		height:12px;
+	}
+	#g-lottery-location-medium .g-pstyle4 {
+		font-family:arial,helvetica,sans-serif;
+		line-height:8px;
+		height:8px;
+		font-size:7px;
+		color:rgb(77,77,77);
+	}
+	#g-lottery-location-medium .g-pstyle5 {
+		font-weight:500;
+		line-height:11px;
+		font-size:9px;
+	}
+	#g-lottery-location-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-lottery-location-mobile p {
+		font-weight:regular;
+		line-height:12px;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:10px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+		position:static;
+	}
+	#g-lottery-location-mobile .g-pstyle0 {
+		font-weight:500;
+		line-height:11px;
+		height:11px;
+		font-size:9px;
+		text-align:center;
+	}
+	#g-lottery-location-mobile .g-pstyle1 {
+		font-family:arial,helvetica,sans-serif;
+		line-height:7px;
+		height:7px;
+		font-size:6px;
+		color:rgb(77,77,77);
+	}
+	#g-lottery-location-mobile .g-pstyle2 {
+		font-weight:500;
+	}
+	#g-lottery-location-mobile .g-pstyle3 {
+		font-weight:500;
+		line-height:11px;
+		height:11px;
+		font-size:9px;
+	}
+	#g-lottery-location-mobile .g-pstyle4 {
+		font-weight:500;
+		line-height:9px;
+		font-size:7px;
+	}
+
+</style>
+
+<div id="g-lottery-location-box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-lottery-location-full" class="g-artboard" style="min-width: 700px;" data-aspect-ratio="1.647" data-min-width="700">
+<div style="padding: 0 0 60.7143% 0;"></div>
+		<img id="g-lottery-location-full-img" class="g-lottery-location-full-img g-aiImg" alt="" src="lottery-location-full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:8.601%;margin-top:-8.6px;left:84.9887%;width:34px;">
+			<p class="g-pstyle0">39</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:11.7238%;margin-top:-7.8px;left:8.0871%;margin-left:-35.5px;width:71px;">
+			<p class="g-pstyle1">New York</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:28.1944%;margin-top:-7.8px;left:8.1796%;margin-left:-35.5px;width:71px;">
+			<p class="g-pstyle1">California</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:44.665%;margin-top:-7.8px;left:7.3087%;margin-left:-39px;width:78px;">
+			<p class="g-pstyle1">New Jersey</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs" style="top:55.0588%;left:55.5009%;width:33.5714%;">
+			<p class="g-pstyle2">$1.05 billion jackpot makes Michigan the state with the largest winning lottery prize in history.</p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:59.4885%;margin-top:-7.8px;left:8.1443%;margin-left:-23px;width:46px;">
+			<p class="g-pstyle1">Ohio</p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:78.0128%;margin-top:-8.6px;left:41.9121%;width:34px;">
+			<p class="g-pstyle0">15</p>
+		</div>
+		<div id="g-ai0-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:77.8415%;margin-top:-7.8px;left:8.478%;margin-left:-34px;width:68px;">
+			<p class="g-pstyle1">Michigan</p>
+		</div>
+		<div id="g-ai0-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7047%;margin-top:-6px;left:13.5421%;width:27px;">
+			<p class="g-pstyle3">0</p>
+		</div>
+		<div id="g-ai0-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7047%;margin-top:-6px;left:30.9279%;width:31px;">
+			<p class="g-pstyle3">10</p>
+		</div>
+		<div id="g-ai0-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7047%;margin-top:-6px;left:49.079%;width:31px;">
+			<p class="g-pstyle3">20</p>
+		</div>
+		<div id="g-ai0-12" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7047%;margin-top:-6px;left:67.23%;width:31px;">
+			<p class="g-pstyle3">30</p>
+		</div>
+		<div id="g-ai0-13" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7047%;margin-top:-6px;left:83.2381%;width:31px;">
+			<p class="g-pstyle3">40</p>
+		</div>
+		<div id="g-ai0-14" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:92.1304%;margin-top:-8.6px;left:48.4895%;margin-left:-51px;width:102px;">
+			<p class="g-pstyle1">Number of Wins</p>
+		</div>
+		<div id="g-ai0-15" class="g-ai2html-settings g-aiAbs" style="top:91.2941%;left:2.6798%;width:44.1429%;">
+			<p class="g-pstyle2">By: Xinlin Jiang | Source: Megamillions</p>
+		</div>
+	</div>
+
+	<!-- Artboard: medium -->
+	<div id="g-lottery-location-medium" class="g-artboard" style="min-width: 490px;max-width: 699px;max-height: 499px" data-aspect-ratio="1.4" data-min-width="490" data-max-width="699">
+<div style="padding: 0 0 71.4286% 0;"></div>
+		<img id="g-lottery-location-medium-img" class="g-lottery-location-medium-img g-aiImg" alt="" src="lottery-location-medium.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:9.6553%;margin-top:-6.8px;left:87.4143%;width:31px;">
+			<p class="g-pstyle0">39</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.7511%;margin-top:-6.6px;left:3.5615%;width:61px;">
+			<p class="g-pstyle1">New York</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:27.3225%;margin-top:-6.6px;left:3.6647%;width:61px;">
+			<p class="g-pstyle1">California</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:43.894%;margin-top:-6.6px;left:2.6758%;width:67px;">
+			<p class="g-pstyle1">New Jersey</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs" style="top:54.2857%;left:57.632%;width:33.8776%;">
+			<p class="g-pstyle2">$1.05 billion jackpot makes Michigan the state with the largest winning lottery prize in history.</p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:60.4654%;margin-top:-6.6px;left:7.059%;width:41px;">
+			<p class="g-pstyle1">Ohio</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:76.9046%;margin-top:-7.2px;left:43.9074%;width:31px;">
+			<p class="g-pstyle3">15</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:77.0368%;margin-top:-6.6px;left:4.0312%;width:59px;">
+			<p class="g-pstyle1">Michigan</p>
+		</div>
+		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7483%;margin-top:-4.6px;left:14.6562%;width:26px;">
+			<p class="g-pstyle4">0</p>
+		</div>
+		<div id="g-ai1-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7483%;margin-top:-4.6px;left:31.9045%;width:30px;">
+			<p class="g-pstyle4">10</p>
+		</div>
+		<div id="g-ai1-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7483%;margin-top:-4.6px;left:51.1683%;width:30px;">
+			<p class="g-pstyle4">20</p>
+		</div>
+		<div id="g-ai1-12" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7483%;margin-top:-4.6px;left:69.0033%;width:30px;">
+			<p class="g-pstyle4">30</p>
+		</div>
+		<div id="g-ai1-13" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:89.3198%;margin-top:-4.6px;left:84.1857%;width:30px;">
+			<p class="g-pstyle4">40</p>
+		</div>
+		<div id="g-ai1-14" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:92.6369%;margin-top:-7.2px;left:43.4383%;width:86px;">
+			<p class="g-pstyle3">Number of Wins</p>
+		</div>
+		<div id="g-ai1-15" class="g-ai2html-settings g-aiAbs" style="top:96.8571%;left:2.3469%;width:43.8776%;">
+			<p class="g-pstyle5">By: Xinlin Jiang | Source: Megamillions</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-lottery-location-mobile" class="g-artboard" style="max-width: 489px;max-height: 614px" data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
+<div style="padding: 0 0 125.5467% 0;"></div>
+		<img id="g-lottery-location-mobile-img" class="g-lottery-location-mobile-img g-aiImg" alt="" src="lottery-location-mobile.png"/>
+		<div id="g-ai2-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="transform: matrix(0.9982,-0.0597,0.0611,0.9981,0,0);transform-origin: 50% 57.6452142750485%;-webkit-transform: matrix(0.9982,-0.0597,0.0611,0.9981,0,0);-webkit-transform-origin: 50% 57.6452142750485%;-ms-transform: matrix(0.9982,-0.0597,0.0611,0.9981,0,0);-ms-transform-origin: 50% 57.6452142750485%;top:13.4962%;margin-top:-6.5px;left:16.4542%;margin-left:-15px;width:30px;">
+			<p class="g-pstyle0">39</p>
+		</div>
+		<div id="g-ai2-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:16.3899%;margin-top:-4.2px;left:84.5854%;width:28px;">
+			<p class="g-pstyle1">40</p>
+		</div>
+		<div id="g-ai2-3" class="g-ai2html-settings g-aiAbs" style="top:20.1784%;left:74.0373%;width:24.2667%;">
+			<p class="g-pstyle2">Number of wins</p>
+		</div>
+		<div id="g-ai2-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:31.2582%;margin-top:-4.2px;left:84.0042%;width:28px;">
+			<p class="g-pstyle1">30</p>
+		</div>
+		<div id="g-ai2-5" class="g-ai2html-settings g-aiAbs" style="top:33.3475%;left:43.5298%;width:40.2667%;">
+			<p class="g-pstyle2">$1.05 billion jackpot makes Michigan the state with the largest winning lottery prize in history.</p>
+		</div>
+		<div id="g-ai2-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:50.7994%;margin-top:-4.2px;left:83.4385%;width:28px;">
+			<p class="g-pstyle1">20</p>
+		</div>
+		<div id="g-ai2-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:56.4019%;margin-top:-6.5px;left:72.2771%;width:30px;">
+			<p class="g-pstyle3">15</p>
+		</div>
+		<div id="g-ai2-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:68.0042%;margin-top:-4.2px;left:83.5945%;width:28px;">
+			<p class="g-pstyle1">10</p>
+		</div>
+		<div id="g-ai2-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:85.2089%;margin-top:-4.2px;left:83.8849%;width:25px;">
+			<p class="g-pstyle1">0</p>
+		</div>
+		<div id="g-ai2-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7863%;margin-top:-6px;left:73.6143%;margin-left:-26.5px;width:53px;">
+			<p class="g-pstyle0">Michigan</p>
+		</div>
+		<div id="g-ai2-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7863%;margin-top:-6px;left:44.5719%;margin-left:-30px;width:60px;">
+			<p class="g-pstyle0">New Jersey</p>
+		</div>
+		<div id="g-ai2-12" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7863%;margin-top:-6px;left:30.6656%;margin-left:-27.5px;width:55px;">
+			<p class="g-pstyle0">California</p>
+		</div>
+		<div id="g-ai2-13" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.7863%;margin-top:-6px;left:58.6583%;margin-left:-19px;width:38px;">
+			<p class="g-pstyle0">Ohio</p>
+		</div>
+		<div id="g-ai2-14" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:88.9987%;margin-top:-6px;left:16.1357%;margin-left:-27.5px;width:55px;">
+			<p class="g-pstyle0">New York</p>
+		</div>
+		<div id="g-ai2-15" class="g-ai2html-settings g-aiAbs" style="top:95.3696%;left:2.2137%;width:48.5333%;">
+			<p class="g-pstyle4">By: Xinlin Jiang | Source: Megamillions</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-lottery-location-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-04-06 21:09 -->
+
+
+
+
+
+
+
+
+
+        
+        
+        <p>On January 17, 2025, the first big win of the new year went to someone in Tempe, Arizona, who spent $2 and won $112 million—a mega life-changer. According to the Arizona Lottery, this ticket was the second-largest jackpot in Arizona’s history and the largest prize ever won with a ticket purchased online.</p>
+        
+        <p>The winner has two options: take the total amount as an annuity paid over 29 years or accept a cash payout of $49.95 million. This marked the first Mega Millions win of 2025 and was the second-largest jackpot in the nearest five years.</p>
+        
+        <p>However, winners rarely receive the full advertised amount.</p>
+        
+        <p>Mega Millions® is an American multi-jurisdictional lottery game. Tickets cost $2.00 per play. Players pick six numbers from two separate pools--five different numbers from 1 to 70 (the white balls) and one number from 1 to 25 (the gold Mega Ball). Players also can select Easy Pick to generate a serious of numbers. Winners of the jackpots match all six winning numbers in a drawing.</p>
+        
+        <p>March 4, 2025, the latest Mega Millions drawing ended with no winners, pushing the jackpot to $215 million. Is there a statistical approach to winning? I calculated each number’s appearance in winning combinations but found no obvious pattern.</p>
+        
+        <p>Mark Glickman, a senior lecturer on Statistics at Harvard University, shared a “guaranteed” strategy for winning the jackpot in an interview with WCVB. He noted that the Mega Millions machine picks five white balls and one golden one in each drawing, creating a limited number of combinations: 302,575,350. At $2 per ticket, playing every possible number would require an initial investment of $605,150,700.</p>
+        
+        <p>Even if player managed to fill out that many tickets without error, investing such an amount for the next jackpot of $215 million would result in a significant loss. The important fact is you might not get what you see advertised.</p>
+        <h3 class="chart-title">The Shrinking Jackpot: What TV Doesn’t Tell You</h3>
+        <p class="chart-subtitle">Based on the past five years’ data, lottery winners who opt for immediate cash payout typically receive only 50-60% of the advertised jackpot amount, creating a significant gap between headlines and reality.</p>  
+
+
+
+
+
+
+
+
+
+
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-06 18:20 -->
+<!-- ai file: cash-jackpot.ai -->
+<style media="screen,print">
+	#g-cash-jackpot-box ,
+	#g-cash-jackpot-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-cash-jackpot-box p {
+		margin:0;
+	}
+	#g-cash-jackpot-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-cash-jackpot-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-cash-jackpot-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-cash-jackpot-box .g-aiPointText p { white-space: nowrap; }
+	#g-cash-jackpot-full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-cash-jackpot-full p {
+		font-weight:regular;
+		line-height:13px;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:11px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+		position:static;
+	}
+	#g-cash-jackpot-full .g-pstyle0 {
+		font-weight:500;
+		line-height:11px;
+		font-size:9px;
+		text-align:justify;
+		color:rgb(77,77,77);
+	}
+	#g-cash-jackpot-full .g-pstyle1 {
+		font-weight:500;
+	}
+	#g-cash-jackpot-full .g-pstyle2 {
+		font-weight:500;
+		line-height:11px;
+		height:11px;
+		font-size:9px;
+		text-align:justify;
+		color:rgb(77,77,77);
+	}
+	#g-cash-jackpot-full .g-pstyle3 {
+		font-weight:500;
+		line-height:11px;
+		font-size:9px;
+	}
+	#g-cash-jackpot-medium {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-cash-jackpot-medium p {
+		font-weight:regular;
+		line-height:11px;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:9px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+		position:static;
+	}
+	#g-cash-jackpot-medium .g-pstyle0 {
+		font-weight:500;
+		line-height:9px;
+		font-size:8px;
+		text-align:justify;
+		color:rgb(77,77,77);
+	}
+	#g-cash-jackpot-medium .g-pstyle1 {
+		font-weight:500;
+	}
+	#g-cash-jackpot-medium .g-pstyle2 {
+		font-weight:500;
+		line-height:9px;
+		height:9px;
+		font-size:8px;
+		text-align:justify;
+		color:rgb(77,77,77);
+	}
+	#g-cash-jackpot-medium .g-pstyle3 {
+		font-weight:500;
+		line-height:9px;
+		font-size:8px;
+	}
+	#g-cash-jackpot-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-cash-jackpot-mobile p {
+		font-weight:regular;
+		line-height:14px;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:12px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+		position:static;
+	}
+	#g-cash-jackpot-mobile .g-pstyle0 {
+		font-weight:500;
+		line-height:11px;
+		font-size:9px;
+		text-align:justify;
+		color:rgb(77,77,77);
+	}
+	#g-cash-jackpot-mobile .g-pstyle1 {
+		font-weight:500;
+	}
+	#g-cash-jackpot-mobile .g-pstyle2 {
+		font-weight:500;
+		line-height:11px;
+		height:11px;
+		font-size:9px;
+		text-align:justify;
+		color:rgb(77,77,77);
+	}
+	#g-cash-jackpot-mobile .g-pstyle3 {
+		font-weight:500;
+		line-height:13px;
+		font-size:11px;
+	}
+
+</style>
+
+<div id="g-cash-jackpot-box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-cash-jackpot-full" class="g-artboard" style="min-width: 700px;" data-aspect-ratio="1.647" data-min-width="700">
+<div style="padding: 0 0 60.7143% 0;"></div>
+		<img id="g-cash-jackpot-full-img" class="g-cash-jackpot-full-img g-aiImg" alt="" src="cash-jackpot-full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs" style="top:2.5882%;left:89.8982%;width:6.2857%;">
+			<p class="g-pstyle0">860.90 million</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs" style="top:17.6471%;left:0.5714%;width:15.5714%;">
+			<p class="g-pstyle1">Real Cash Values</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs" style="top:17.4118%;left:89.2426%;width:6.2857%;">
+			<p class="g-pstyle0">430.45 million</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:35.2829%;margin-top:-7px;left:89.8982%;width:60px;">
+			<p class="g-pstyle2">1 million</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs" style="top:47.2941%;left:89.2426%;width:6.2857%;">
+			<p class="g-pstyle0">430.45 million</p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs" style="top:62.5882%;left:0.5714%;width:15.5714%;">
+			<p class="g-pstyle1">Advertised jackpot</p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs" style="top:62.3529%;left:89.2426%;width:6.2857%;">
+			<p class="g-pstyle0">860.90 million</p>
+		</div>
+		<div id="g-ai0-8" class="g-ai2html-settings g-aiAbs" style="top:77.4118%;left:25.2855%;width:26.2857%;">
+			<p class="g-pstyle1">On August 8th, 2023, the advertised jackpot hit $1,602 million, more than double its cash value.</p>
+		</div>
+		<div id="g-ai0-9" class="g-ai2html-settings g-aiAbs" style="top:77.1765%;left:89.2426%;width:6.2857%;">
+			<p class="g-pstyle0">1291.36 million</p>
+		</div>
+		<div id="g-ai0-10" class="g-ai2html-settings g-aiAbs" style="top:96.7059%;left:16.9911%;width:5.8571%;">
+			<p class="g-pstyle3">2020</p>
+		</div>
+		<div id="g-ai0-11" class="g-ai2html-settings g-aiAbs" style="top:96.7059%;left:43.5146%;width:5.8571%;">
+			<p class="g-pstyle3">2022</p>
+		</div>
+		<div id="g-ai0-12" class="g-ai2html-settings g-aiAbs" style="top:96.7059%;left:69.3086%;width:5.8571%;">
+			<p class="g-pstyle3">2024</p>
+		</div>
+	</div>
+
+	<!-- Artboard: medium -->
+	<div id="g-cash-jackpot-medium" class="g-artboard" style="min-width: 490px;max-width: 699px;max-height: 499px" data-aspect-ratio="1.4" data-min-width="490" data-max-width="699">
+<div style="padding: 0 0 71.4286% 0;"></div>
+		<img id="g-cash-jackpot-medium-img" class="g-cash-jackpot-medium-img g-aiImg" alt="" src="cash-jackpot-medium.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs" style="top:3.7143%;left:92.5036%;width:6.3265%;">
+			<p class="g-pstyle0">860.90 million</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs" style="top:18.5714%;left:1.3265%;width:15.9184%;">
+			<p class="g-pstyle1">Real Cash Values</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs" style="top:18.5714%;left:91.8344%;width:6.3265%;">
+			<p class="g-pstyle0">430.45 million</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:35.8129%;margin-top:-5.3px;left:92.5038%;width:49px;">
+			<p class="g-pstyle2">1 million</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs" style="top:48%;left:91.8344%;width:6.3265%;">
+			<p class="g-pstyle0">430.45 million</p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs" style="top:62.8571%;left:1.3265%;width:15.9184%;">
+			<p class="g-pstyle1">Advertised jackpot</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs" style="top:62.8571%;left:91.8344%;width:6.3265%;">
+			<p class="g-pstyle0">860.90 million</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs" style="top:77.7143%;left:26.5525%;width:26.9388%;">
+			<p class="g-pstyle1">On August 8th, 2023, the advertised jackpot hit $1,602 million, more than double its cash value.</p>
+		</div>
+		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs" style="top:77.4286%;left:91.8344%;width:6.3265%;">
+			<p class="g-pstyle0">1291.36 million</p>
+		</div>
+		<div id="g-ai1-10" class="g-ai2html-settings g-aiAbs" style="top:96.5714%;left:18.0864%;width:5.9184%;">
+			<p class="g-pstyle3">2020</p>
+		</div>
+		<div id="g-ai1-11" class="g-ai2html-settings g-aiAbs" style="top:96.5714%;left:45.1592%;width:5.9184%;">
+			<p class="g-pstyle3">2022</p>
+		</div>
+		<div id="g-ai1-12" class="g-ai2html-settings g-aiAbs" style="top:96.5714%;left:71.4875%;width:5.9184%;">
+			<p class="g-pstyle3">2024</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-cash-jackpot-mobile" class="g-artboard" style="max-width: 489px;max-height: 614px" data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
+<div style="padding: 0 0 125.5467% 0;"></div>
+		<img id="g-cash-jackpot-mobile-img" class="g-cash-jackpot-mobile-img g-aiImg" alt="" src="cash-jackpot-mobile.png"/>
+		<div id="g-ai2-1" class="g-ai2html-settings g-aiAbs" style="top:0.8496%;left:84.306%;width:11.7333%;">
+			<p class="g-pstyle0">860.90 million</p>
+		</div>
+		<div id="g-ai2-2" class="g-ai2html-settings g-aiAbs" style="top:16.1427%;left:84.4155%;width:11.7333%;">
+			<p class="g-pstyle0">430.45 million</p>
+		</div>
+		<div id="g-ai2-3" class="g-ai2html-settings g-aiAbs" style="top:16.7799%;left:4.4231%;width:27.7333%;">
+			<p class="g-pstyle1">Real Cash Values</p>
+		</div>
+		<div id="g-ai2-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:31.8505%;margin-top:-7px;left:84.5727%;width:60px;">
+			<p class="g-pstyle2">1 million</p>
+		</div>
+		<div id="g-ai2-5" class="g-ai2html-settings g-aiAbs" style="top:46.0918%;left:84.4155%;width:11.7333%;">
+			<p class="g-pstyle0">430.45 million</p>
+		</div>
+		<div id="g-ai2-6" class="g-ai2html-settings g-aiAbs" style="top:61.3849%;left:84.4155%;width:11.7333%;">
+			<p class="g-pstyle0">860.90 million</p>
+		</div>
+		<div id="g-ai2-7" class="g-ai2html-settings g-aiAbs" style="top:62.0221%;left:4.4231%;width:27.7333%;">
+			<p class="g-pstyle1">Advertised jackpot</p>
+		</div>
+		<div id="g-ai2-8" class="g-ai2html-settings g-aiAbs" style="top:74.1291%;left:13.6%;width:32.8%;">
+			<p class="g-pstyle1">On August 8th, 2023, the advertised jackpot hit $1,602 million, more than double its cash value.</p>
+		</div>
+		<div id="g-ai2-9" class="g-ai2html-settings g-aiAbs" style="top:76.678%;left:84.4155%;width:11.7333%;">
+			<p class="g-pstyle0">1291.36 million</p>
+		</div>
+		<div id="g-ai2-10" class="g-ai2html-settings g-aiAbs" style="top:96.2192%;left:19.9733%;width:5.6%;">
+			<p class="g-pstyle3">2020</p>
+		</div>
+		<div id="g-ai2-11" class="g-ai2html-settings g-aiAbs" style="top:96.2192%;left:45.0921%;width:5.6%;">
+			<p class="g-pstyle3">2022</p>
+		</div>
+		<div id="g-ai2-12" class="g-ai2html-settings g-aiAbs" style="top:96.2192%;left:69.5201%;width:5.6%;">
+			<p class="g-pstyle3">2024</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-cash-jackpot-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-04-06 18:20 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <p>Lottery jackpots are expressed in two ways: “cash value” and “advertised value.” The cash value is based on ticket sale proceeds, minus retailer and state lottery commissions and other prizes. If no one wins, the jackpot rolls over to the next drawing. The cash value is what player actually receive when choose a lump sum. Winner can receive the full advertised jackpot amount when choose the annuity option which paid over 30 annual payments. These payments increase by 5% each year to help keep pace with inflation.</p>
+        
+        <p>A jackpot is like foam--beautiful when viewed in sunlight. Media coverage intensifies this light, making the bubble grow larger until it resembles pearls. But when you approach, you see its empty interior. Despite your efforts to grasp it, it vanishes. I’d rather spend that $2 on a slice of pizza in New York City.</p>
     </div>
-
-
-    <div class="content">
-        <p>Under news reports on YouTube, people complained of “fraud.” The highest-liked comment came from @shawnwillia: “Really!!! Again.... Bull crap all/most winners from there!! It’s got to be rigged!!! Such a scam.”</p>
-    </div>
- 
- 
-    <div class="content">
-        <figure>
-            <img src="fig1.png" alt="fig 1">
-        </figure>
-    </div>
-    <div class="content">
-        <figure>
-            <img src="fig2.png" alt="fig 2">
-            
-        </figure>
-    </div>
-
-    <div class="content">
-        <p>At the heart of this aromatic empire sits jasmine - the only note present in every best selling fragrance
-            analyzed for this piece. From its Himalayan origins, jasmine now blooms globally, with India and Egypt
-            leading production. While hundreds of jasmine varieties exist, perfumers prize two: Grandiflorum and Sambac.
-            During the peak harvest months of July and August, these flowers release a scent that dances between
-            feminine and masculine notes, defying simple categorization.</p>
-
-        <p>I have an acute sensitivity to scents – I’m always the first to ask “Do you smell that...?” in a crowd. My
-            fragrance choices influence my purchases, and in turn, the scents I wear enhance my personality, adding touches
-            of honey to my recollections. Like a personal soundtrack, my fragrance wardrobe changes with the seasons, each
-            scent carefully chosen to amplify the natural rhythm of the year.</p>
-    </div>
-
-    <div class="content">
-        <figure>
-            <img src="fig3.png" alt="fig 3">
-        </figure>
-    </div>
-
-
-    <div class="content">
-        <p>When joy overflows, I reach for Jo Malone’s Velvet Rose & Oud Cologne Intense. The passionate sweetness of
-            rose, grounded by warm woody notes, takes me back to my undergraduate graduation - a hot yet fulfilling May
-            summer. As spring awakens, Jo Malone’s Yuja becomes my companion. Its delicate, poetic coolness mirrors the
-            misty landscape where new leaves unfurl and flower buds prepare their debut.</p>
-
-        <p>Summer calls for Diptyqu’s Fleur de Peau - a clean scent that captures those precious moments at 4 AM when
-            the sun peeks over the horizon. You might question nature’s early rising, but like the dawn itself, this
-            fragrance brims with anticipation for the unknown. As autumn paints the world in fire, Jo Malone’s Peony &
-            Blush Suede accompanies the season’s grand finale before winter’s quiet descent.</p>
-
-        <p>In winter’s embrace, Le Labo’s Santal 33 becomes my refuge. Its rich, woody aroma creates an invisible
-            hearth, warming the spirit like a gathering around a crackling fireplace on the coldest nights.</p>
-    </div>
-
-    <div class="content">
-        <figure>
-            <img src="pic2.JPG" alt="Xinlin Jiang’s perfume collection Photo by Xinlin Jiang">
-            <figcaption>Xinlin Jiang’s perfume collection Photo by Xinlin Jiang</figcaption>
-        </figure>
-    </div>
-
-    <div class="content">
-        <p>Revisiting these perfumes while writing, memories cascade like the delicate mist from each press of the
-            nozzle. Every burst of scent blooms like a firework - brief yet indelible, connecting us not just to moments
-            but to people who shared them. When that familiar fragrance fills the air, who appears in your mind’s eye?</p>
-    </div>
-
-    <div class="content">
-        <h2 class="small-title">Methodology</h2>
-        <p>My inspiration came from a Reddit post:
-            <a href="https://www.reddit.com/r/FemFragLab/comments/1c6iur3/a_brief_analysis_of_the_most_popular_femfrags_in/"
-               target="_blank">
-                A Brief Analysis of the Most Popular Femfrags in the U.S.
-            </a>.
-            Since there was no readily available ranking of popular fragrances, I manually gathered data from four major
-            retailers: Sephora, Ulta Beauty, Macy’s, and Bloomingdale’s. Using the Fragrance section of each site,
-            I filtered for the highest-rated products and then sorted them by Bestseller. I selected the top ten
-            perfumes from each platform. From this dataset, I ranked 16 perfumes based on how frequently they appeared
-            in the top ten across multiple platforms—each perfume was listed in at least two of the four stores’ top-ten
-            lists.</p>
-
-        <p>To analyze the olfactory families and ingredients of each fragrance, I used Wikiparfum, a digital platform for
-            perfume enthusiasts. Since different versions of the same fragrance exist across generations, the URLs lacked a
-            consistent pattern. I manually searched for and recorded each perfume’s URL, then used BeautifulSoup to scrape
-            the olfactory family and ingredient details.</p>
-
-        <p>For ingredient analysis, I used pandas. For data visualization, I used R Studio, creating a Sankey diagram with
-            ggsankey and ranking ingredients with ggplot.</p>
-    </div>
-
-    <div class="content">
-        <h2 class="small-title">Limitations</h2>
-        <p>The four retail platforms I used cater primarily to female consumers. As a result, my findings are likely
-            skewed toward female preferences.</p>
-    </div>
-
-    <style>
-        .small-title {
-            font-size: 1.8em; /* Larger font size */
-            font-weight: bold;
-            color: black;
-            text-align: left;
-            margin-top: 2em;
-        }
-    </style>
-
+    
     <div class="footer">
-        <div class="content">
-            <p>Interested in my code? <a href="https://github.com/gracejiang0612/Olfactory-families" target="_blank">See more</a></p>
+        <p><div class="content">
+            <p>Interested in my code? <a href="https://github.com/gracejiang0612/No-One-Wins-the-Jackpots" target="_blank">See more</a></p>
 
-        </div>
+        </div></p>
     </div>
 </body>
-
 </html>
