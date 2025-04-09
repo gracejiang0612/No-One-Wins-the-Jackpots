@@ -1,136 +1,117 @@
+
+# Read the data
+lottery_data <- read.csv("/Users/Grace/Desktop/2025-studio/project3/cleaned_lottery_data.csv", stringsAsFactors = FALSE)
+
 # Load required libraries
 library(ggplot2)
 library(dplyr)
 library(lubridate)
 library(scales)
-library(patchwork)
+library(tidyr)
 
-# Read the data
-lottery_data <- read.csv("cleaned_lottery_data.csv", stringsAsFactors = FALSE)
 
 # Convert Date column to proper date format
-lottery_data$Date <- as.Date(lottery_data$Date)
+lottery_data$Date <- as.Date(lottery_data$Date, format = "%m/%d/%y")
 
-# Create a long format dataset for easier plotting
-lottery_long <- lottery_data %>%
+# Filter to only include rows where both Jackpot and Cash Value are available
+lottery_filtered <- lottery_data %>%
+  filter(!is.na(Jackpot) & !is.na(Cash.Value) & 
+           Jackpot != "" & Cash.Value != "")
+
+# Create a version of the data for the mirrored chart
+# For Jackpot, we'll convert values to negative to show below the x-axis
+lottery_mirror <- lottery_filtered %>%
   select(Date, Jackpot, Cash.Value) %>%
-  tidyr::pivot_longer(cols = c(Jackpot, Cash.Value),
-                      names_to = "Type",
-                      values_to = "Value")
+  mutate(Jackpot = -Jackpot) %>%  # Make jackpot negative for plotting below axis
+  pivot_longer(cols = c(Jackpot, Cash.Value),
+               names_to = "Type",
+               values_to = "Value")
 
-# Create color mapping
-color_mapping <- c("Jackpot" = "blue", "Cash.Value" = "red")
-
-# Create the combined visualization
-p1 <- ggplot(lottery_long, aes(x = Date, y = Value, size = Value, color = Type)) +
-  geom_point(alpha = 0.7) +
-  scale_size_continuous(range = c(2, 15)) +
-  scale_color_manual(values = color_mapping) +
-  scale_y_continuous(labels = scales::dollar_format()) +
+# Create the split axis chart
+ggplot(lottery_mirror, aes(x = Date, y = Value, fill = Type, color = Type)) +
+  # Add the area fills
+  geom_area(alpha = 0.4) +
+  # Add lines on top of the areas
+  geom_line(linewidth = 1) +
+  # Set the colors
+  scale_fill_manual(values = c("Jackpot" = "blue", "Cash.Value" = "red")) +
+  scale_color_manual(values = c("Jackpot" = "blue", "Cash.Value" = "red")) +
+  # Custom y-axis labels that show absolute values
+  scale_y_continuous(
+    labels = function(x) scales::dollar(abs(x)),
+    breaks = function(x) {
+      # Create breaks on both positive and negative sides
+      max_val <- max(abs(x))
+      c(seq(-max_val, 0, length.out = 5)[-1], 
+        seq(0, max_val, length.out = 5)[-1])
+    }
+  ) +
+  # Add labels and title
   labs(
-    title = "Lottery Jackpot and Cash Value Over Time",
+    title = "Surplus/Deficit Filled Line Chart for Lottery Data",
+    subtitle = "Cash Value (top, red) vs Jackpot (bottom, blue)",
     x = "Date",
     y = "Amount ($)",
-    color = "Type",
-    size = "Value"
+    fill = "Type",
+    color = "Type"
   ) +
+  # Add annotation explaining the chart
+  annotate("text", x = min(lottery_filtered$Date) + 100, 
+           y = max(lottery_filtered$Cash.Value) * 0.7, 
+           label = "The shaded area of\nthese charts allows a\nbalance to be shown -\neither against a\nbaseline or between\ntwo series.", 
+           hjust = 0, size = 3.5) +
+  # Add a horizontal line at y=0 (the x-axis/baseline)
+  geom_hline(yintercept = 0, linetype = "solid", color = "black", linewidth = 0.7) +
+  # Theme adjustments
   theme_minimal() +
   theme(
-    legend.position = "bottom",
-    plot.title = element_text(hjust = 0.5, face = "bold"),
-    axis.text.x = element_text(angle = 45, hjust = 1)
-  )
-
-# Create side-by-side faceted plot
-p2 <- ggplot(lottery_long, aes(x = Date, y = Value, size = Value, color = Type)) +
-  geom_point(alpha = 0.7) +
-  scale_size_continuous(range = c(2, 15)) +
-  scale_color_manual(values = color_mapping) +
-  scale_y_continuous(labels = scales::dollar_format()) +
-  facet_wrap(~Type, ncol = 1) +
-  labs(
-    title = "Lottery Values (Faceted View)",
-    x = "Date",
-    y = "Amount ($)",
-    size = "Value"
-  ) +
-  theme_minimal() +
-  theme(
-    legend.position = "none",
-    plot.title = element_text(hjust = 0.5, face = "bold"),
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    plot.subtitle = element_text(hjust = 0.5, size = 11),
     axis.text.x = element_text(angle = 45, hjust = 1),
-    strip.background = element_rect(fill = "lightgray"),
-    strip.text = element_text(face = "bold")
+    panel.grid.major = element_line(color = "gray90"),
+    panel.grid.minor = element_line(color = "gray95"),
+    legend.position = "right"
   )
 
-# Time series line plot with points
-p3 <- ggplot(lottery_long, aes(x = Date, y = Value, color = Type, group = Type)) +
-  geom_line(alpha = 0.5) +
-  geom_point(aes(size = Value), alpha = 0.7) +
-  scale_size_continuous(range = c(1, 8)) +
-  scale_color_manual(values = color_mapping) +
-  scale_y_continuous(labels = scales::dollar_format()) +
+# Save the plot
+ggsave("lottery_split_axis.png", width = 12, height = 8, dpi = 300)
+
+# For a cleaner version with filled areas only
+ggplot(lottery_mirror, aes(x = Date, y = Value, fill = Type)) +
+  # Add the area fills
+  geom_area(alpha = 0.6) +
+  # Set the colors
+  scale_fill_manual(values = c("Jackpot" = "blue", "Cash.Value" = "red")) +
+  # Custom y-axis labels that show absolute values
+  scale_y_continuous(
+    labels = function(x) scales::dollar(abs(x)),
+    breaks = function(x) {
+      # Create breaks on both positive and negative sides
+      max_val <- max(abs(x))
+      c(seq(-max_val, 0, length.out = 5)[-1], 
+        seq(0, max_val, length.out = 5)[-1])
+    }
+  ) +
+  # Add labels and title
   labs(
-    title = "Lottery Values Over Time (Line Plot)",
+    title = "Lottery Values: Mirror Chart",
+    subtitle = "Cash Value (top, red) vs Jackpot (bottom, blue)",
     x = "Date",
     y = "Amount ($)",
-    color = "Type",
-    size = "Value"
+    fill = "Type"
   ) +
+  # Add a horizontal line at y=0 (the x-axis/baseline)
+  geom_hline(yintercept = 0, linetype = "solid", color = "black", linewidth = 0.7) +
+  # Theme adjustments
   theme_minimal() +
   theme(
-    legend.position = "bottom",
-    plot.title = element_text(hjust = 0.5, face = "bold"),
-    axis.text.x = element_text(angle = 45, hjust = 1)
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),
+    plot.subtitle = element_text(hjust = 0.5, size = 11),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid.major = element_line(color = "gray90"),
+    panel.grid.minor = element_line(color = "gray95"),
+    legend.position = "right"
   )
 
-# Calculate the correlation
-correlation <- cor(lottery_data$Jackpot, lottery_data$Cash.Value)
-
-# Create scatter plot
-p4 <- ggplot(lottery_data, aes(x = Jackpot, y = Cash.Value)) +
-  geom_point(aes(size = Jackpot), color = "purple", alpha = 0.7) +
-  geom_smooth(method = "lm", color = "darkgray") +
-  scale_size_continuous(range = c(2, 10)) +
-  scale_x_continuous(labels = scales::dollar_format()) +
-  scale_y_continuous(labels = scales::dollar_format()) +
-  labs(
-    title = paste0("Jackpot vs Cash Value (Correlation: ", round(correlation, 3), ")"),
-    x = "Jackpot ($)",
-    y = "Cash Value ($)",
-    size = "Jackpot"
-  ) +
-  theme_minimal() +
-  theme(
-    legend.position = "none",
-    plot.title = element_text(hjust = 0.5, face = "bold")
-  )
-
-# Save individual plots
-ggsave("lottery_bubble_chart.png", p1, width = 10, height = 6, dpi = 300)
-ggsave("lottery_faceted_chart.png", p2, width = 10, height = 8, dpi = 300)
-ggsave("lottery_line_chart.png", p3, width = 10, height = 6, dpi = 300)
-ggsave("lottery_correlation.png", p4, width = 8, height = 6, dpi = 300)
-
-# Create a combined dashboard
-layout <- "
-AABB
-CCDD
-"
-
-combined_plot <- p1 + p2 + p3 + p4 + plot_layout(design = layout)
-ggsave("lottery_dashboard.png", combined_plot, width = 16, height = 12, dpi = 300)
-
-# Print summary statistics
-summary_stats <- lottery_data %>%
-  summarise(
-    Min_Jackpot = min(Jackpot, na.rm = TRUE),
-    Max_Jackpot = max(Jackpot, na.rm = TRUE),
-    Mean_Jackpot = mean(Jackpot, na.rm = TRUE),
-    Min_Cash = min(Cash.Value, na.rm = TRUE),
-    Max_Cash = max(Cash.Value, na.rm = TRUE),
-    Mean_Cash = mean(Cash.Value, na.rm = TRUE),
-    Count = n()
-  )
-
-print(summary_stats)
+# Save the second plot
+ggsave("/Users/Grace/Desktop/2025-studio/project3/lottery_mirror_chart.svg", width = 12, height = 8, dpi = 300)
