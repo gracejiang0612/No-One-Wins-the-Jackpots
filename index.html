@@ -4,27 +4,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>No One Wins the Jackpot</title>
+    <meta name="description" content="An investigation into Mega Millions lottery jackpots and the reality behind advertised vs. actual payouts">
+    <meta name="keywords" content="lottery, Mega Millions, jackpot, data journalism, statistics">
+    <meta name="author" content="Grace Jiang">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="tab.png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="No One Wins the Jackpot">
+    <meta property="og:description" content="An investigation into Mega Millions lottery jackpots and the reality behind advertised vs. actual payouts">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Grace Jiang - Data Journalism">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@gracejiang0612">
+    
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     
     <style>
         body {
             margin: 0;
-            font-size: 20px;
             font-family: Georgia, 'Times New Roman', Times, serif;
-            line-height: 1.6;
+            line-height: 1.7;
+            color: #000;
         }
         
         .header-container {
-            position: relative;
-            width: 100%;
-            min-height: 70vh;
+            display: flex;
+            align-items: stretch;
+            min-height: 80vh;
+            gap: 0;
             background-image: url('Mega_Millions_Lottery_logo.png');
             background-size: cover;
             background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             margin-bottom: 2em;
+        }
+        
+        .header-content {
+            flex: 1;
+            padding: 60px 40px;
+            margin: 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .title-box {
@@ -36,21 +58,23 @@
         }
         
         h1 {
-            font-family: 'Lora', Georgia, serif;
-            font-weight: bold;
-            font-size: 3em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 3.2em;
+            font-weight: normal;
             line-height: 1.1;
-            margin: 0;
+            margin: 0 0 30px 0;
+            text-align: center;
         }
         
         h2 {
-            font-family: 'Lora', Georgia, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-weight: bold;
             margin: 1.5em 0 0.5em 0;
         }
-		.chart-title {
+        
+        .chart-title {
             color: #0a3463;
-            font-size: 0.9em;
+            font-size: 1.3em;
             font-weight: bold;
             margin-top: 1.5em;
             margin-bottom: 0.2em;
@@ -61,7 +85,7 @@
             color: #555;
             margin-top: 0;
             margin-bottom: 1.5em;
-            font-size: 0.8em;
+            font-size: 1.1em;
         }
         
         .credit-badge {
@@ -74,20 +98,52 @@
             font-size: 12px;
             border-radius: 4px;
         }
+        
         .byline {
-            font-style: italic;
-            font-weight: 500;
-            margin-bottom: 1.5em;
-            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 1em;
+            color: #888;
+            margin: 30px auto 5px auto;
+            padding: 0 0;
+            max-width: 800px;
+            text-align: left;
         }
+        
+        .publish-date {
+            font-family: Arial, sans-serif;
+            font-size: 0.8em;
+            color: #999;
+            margin: 5px auto 50px auto;
+            padding: 0 0;
+            max-width: 800px;
+            text-align: left;
+        }
+        
+        .byline a {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .byline a:hover {
+            color: #1a0dab;
+            text-decoration: underline;
+        }
+        
         .main-content {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
+            margin: 40px auto 30px auto;
+            padding: 0 60px;
         }
         
         p {
-            margin: 0 0 1.2em 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #000;
+            text-align: justify;
+            margin: 0 0 20px 0;
         }
         
         .chart-placeholder {
@@ -101,14 +157,6 @@
             margin: 2em 0;
         }
         
-        blockquote {
-            font-style: italic;
-            border-left: 4px solid #0a3463;
-            padding-left: 1em;
-            margin-left: 0;
-            color: #555;
-        }
-        
         .footer {
             background-color: #f5f5f5;
             padding: 2em 0;
@@ -117,29 +165,73 @@
             font-size: 0.8em;
             color: #666;
         }
+        
+        .footer a {
+            color: #1a0dab;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .footer a:hover {
+            color: #c0392b;
+            text-decoration: underline;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .byline {
+                font-size: 0.9em;
+                padding: 0 0;
+            }
+            
+            .publish-date {
+                font-size: 0.7em;
+                padding: 0 0;
+            }
+            
+            .main-content {
+                padding: 0 30px;
+            }
+            
+            .header-content {
+                padding: 30px 20px;
+                margin: 0 10px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="header-container">
-        <div class="title-box">
-            <h1>No One Wins the Jackpot</h1>
+        <div class="header-content">
+            <div class="title-box">
+                <h1>No One Wins the Jackpot</h1>
+            </div>
         </div>
-        <div class="credit-badge">Background image credit: Sam Saunders | Flickr</div>
-		</div>
-    	
-   		
+
+    </div>
+    
     <div class="main-content">
-		<div class="byline">By Xinlin Jiang</div>
-        <p>Last year, a lucky Californian became the state’s newest billionaire after winning the $1.22 billion Mega Millions® jackpot drawn on Friday night, December 27, 2024.</p>
+        <div class="byline">By <a href="https://gracejiang0612.github.io/" target="_blank">Grace Jiang</a></div>
+        <div class="publish-date">March 12, 2025</div>
+        
+        <p>Last year, a lucky Californian became the state&rsquo;s newest billionaire after winning the $1.22 billion Mega Millions® jackpot drawn on Friday night, December 27, 2024.</p>
         
         <p>Mega Millions is an American multi-jurisdictional lottery game. Tickets cost $2.00 per play. Players pick six numbers from two separate pools--five different numbers from 1 to 70 (the white balls) and one number from 1 to 25 (the gold Mega Ball). Players also can select Easy Pick to generate a serious of numbers. Winners of the jackpots match all six winning numbers in a drawing.</p>
         
-        <p>Under news reports on YouTube, people complained of “fraud.” The highest-liked comment came from @shawnwillia: <blockquote>“Really!!! Again.... Bull crap all/most winners from there!! It’s got to be rigged!!! Such a scam.”</blockquote></p>
+        <p>Under news reports on YouTube, people complained of &ldquo;fraud.&rdquo; The highest-liked comment came from @shawnwillia: &ldquo;Really!!! Again.... Bull crap all/most winners from there!! It&rsquo;s got to be rigged!!! Such a scam.&rdquo;</p>
         
         <p>Does California really the luckiest place for Mega Millions jackpot wins?</p>
 
-        <h3 class="chart-title">America’s Lottery Hotspots: Where Lightning Strikes Most Often</h3>
+        <h3 class="chart-title">America&rsquo;s Lottery Hotspots: Where Lightning Strikes Most Often</h3>
         <p class="chart-subtitle">From 2002, Mega Millions jackpots show up most often in these top five states, with New York claiming 39 wins.</p>
         
 
@@ -604,19 +696,19 @@
 
 
         
-<p>On January 17, 2025, the first big win of the new year went to someone in Tempe, Arizona, who spent $2 and won $112 million—a mega life-changer. According to the Arizona Lottery, this ticket was the second-largest jackpot in Arizona’s history and the largest prize ever won with a ticket purchased online.</p>
+<p>On January 17, 2025, the first big win of the new year went to someone in Tempe, Arizona, who spent $2 and won $112 million&mdash;a mega life-changer. According to the Arizona Lottery, this ticket was the second-largest jackpot in Arizona&rsquo;s history and the largest prize ever won with a ticket purchased online.</p>
         
 <p>The winner has two options: take the total amount as an annuity paid over 29 years or accept a cash payout of $49.95 million. This marked the first Mega Millions win of 2025 and was the second-largest jackpot behind a June 2020 win of $414 million.</p>
 
 <p>However, winners rarely receive the full advertised amount.</p>
 
-<p>March 4, 2025, the latest Mega Millions drawing ended with no winners, pushing the jackpot to $215 million. Is there a statistical approach to winning? I calculated each number’s appearance in winning combinations but found no obvious pattern.</p>
+<p>March 4, 2025, the latest Mega Millions drawing ended with no winners, pushing the jackpot to $215 million. Is there a statistical approach to winning? I calculated each number&rsquo;s appearance in winning combinations but found no obvious pattern.</p>
 
-<p>Mark Glickman, a senior lecturer on Statistics at Harvard University, shared a “guaranteed” strategy for winning the jackpot in an interview with WCVB. He noted that the Mega Millions machine picks five white balls and one golden one in each drawing, creating a limited number of combinations: 302,575,350. At $2 per ticket, playing every possible number would require an initial investment of $605,150,700.</p>
+<p>Mark Glickman, a senior lecturer on Statistics at Harvard University, shared a &ldquo;guaranteed&rdquo; strategy for winning the jackpot in an interview with WCVB. He noted that the Mega Millions machine picks five white balls and one golden one in each drawing, creating a limited number of combinations: 302,575,350. At $2 per ticket, playing every possible number would require an initial investment of $605,150,700.</p>
 
 <p>Even if player managed to fill out that many tickets without error, investing such an amount for the next jackpot of $215 million would result in a significant loss. The important fact is you might not get what you see advertised.</p>
-<h3 class="chart-title">The Shrinking Jackpot: What TV Doesn’t Tell You</h3>
-<p class="chart-subtitle">Based on the past five years’ data, lottery winners who opt for immediate cash payout typically receive only 50-60% of the advertised jackpot amount, creating a significant gap between headlines and reality.</p>
+<h3 class="chart-title">The Shrinking Jackpot: What TV Doesn&rsquo;t Tell You</h3>
+<p class="chart-subtitle">Based on the past five years&rsquo; data, lottery winners who opt for immediate cash payout typically receive only 50-60% of the advertised jackpot amount, creating a significant gap between headlines and reality.</p>
 
 
        <!-- Generated by ai2html v0.121.1 - 2025-04-06 18:20 -->
@@ -1069,29 +1161,16 @@
 
 
         
-<p>Lottery jackpots are expressed in two ways: “cash value” and “advertised value.” The cash value is based on ticket sale proceeds, minus retailer and state lottery commissions and other prizes. If no one wins, the jackpot rolls over to the next drawing. The cash value is what player actually receive when choose a lump sum. Winner can receive the full advertised jackpot amount when choose the annuity option which paid over 30 annual payments. These payments increase by 5% each year to help keep pace with inflation.</p>
+<p>Lottery jackpots are expressed in two ways: &ldquo;cash value&rdquo; and &ldquo;advertised value.&rdquo; The cash value is based on ticket sale proceeds, minus retailer and state lottery commissions and other prizes. If no one wins, the jackpot rolls over to the next drawing. The cash value is what player actually receive when choose a lump sum. Winner can receive the full advertised jackpot amount when choose the annuity option which paid over 30 annual payments. These payments increase by 5% each year to help keep pace with inflation.</p>
         
-<p>A jackpot is like foam--beautiful when viewed in sunlight. Media coverage intensifies this light, making the bubble grow larger until it resembles pearls. But when you approach, you see its empty interior. Despite your efforts to grasp it, it vanishes. I’d rather spend that $2 on a slice of pizza in New York City.</p>
+<p>A jackpot is like foam&mdash;beautiful when viewed in sunlight. Media coverage intensifies this light, making the bubble grow larger until it resembles pearls. But when you approach, you see its empty interior. Despite your efforts to grasp it, it vanishes. I&rsquo;d rather spend that $2 on a slice of pizza in New York City.</p>
 </div>
     
-	<style>
-        .small-title {
-            font-size: 1.8em; /* Larger font size */
-            font-weight: bold;
-            color: black;
-            text-align: left;
-            margin-top: 2em;
-        }
-    </style>
-
     <div class="footer">
         <div class="content">
             <p>Interested in my code? <a href="https://github.com/gracejiang0612/No-One-Wins-the-Jackpots" target="_blank">See more</a></p>
-
         </div>
     </div>
 </body>
-
-</html>
 
 </html>
